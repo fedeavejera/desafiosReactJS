@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import logonav from '../img/logotamachicoo.png'
-import CartWidget from './CardWidget';
+import logonav from '../img/logotamachicoo.png';
+import CartWidget from './CartWidget';
 const Navbar = () => {
     return (
         <div className="App">
@@ -19,7 +19,7 @@ const Navbar = () => {
               <a class="nav-link" href="#">Herramientas Manuales</a>
             </li>   
             <li class="nav-item">
-              <CartWidget/>
+             <CartWidget/>
             </li>         
           </ul>
                </div>
