@@ -21,4 +21,12 @@ div .boxNav {
 }
 
 
+.divCount {
+  display: inline-flex
+}
+.pCount{
+  padding: 5px;
+  border: solid;
+  margin: 5px;
+}
 
