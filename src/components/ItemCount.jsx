@@ -17,9 +17,9 @@ const ItemCount = () => {
 
     }
     return ( 
-      <div>
+      <div className="divCount">
           <Button variant="contained" onClick={increment}>+</Button>
-          <p>{count}</p>
+          <p className='pCount'>{count}</p>
           <Button variant="contained" onClick={decrement}>-</Button>
       </div>
     )

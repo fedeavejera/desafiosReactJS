@@ -20,6 +20,10 @@ div .boxNav {
 
 }
 
+.Card {
+  width: 50%;
+}
+
 
 .divCount {
   display: inline-flex
