@@ -133,13 +133,9 @@ const data = [
         categoria: "Manual"
     }
     
-]
+];
 
 
-export const getData = () => {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            return resolve(data);
-        }, 2000)
-    })
+module.exports = { 
+    data,
 }
