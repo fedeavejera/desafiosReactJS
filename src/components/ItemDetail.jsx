@@ -28,6 +28,7 @@ import {Card, CardImg, CardBody, CardTitle, CardText, CardSubtitle, Button} from
           </Button>
         </CardBody>
       </Card></div>
+      <ItemCount />
             </Row>
         </Container>
         </>
