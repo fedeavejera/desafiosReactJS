@@ -2,7 +2,7 @@ import React from 'react';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import {Card, CardImg, CardBody, CardTitle, CardText, CardSubtitle, Button} from "reactstrap"
 
-const Item = ({ id, nombre, marca, precio, stock, img, categoria}) => {
+const Item = ({ id, nombre, marca, precio, stock, img, categoria, description}) => {
     
     return(
         <div> 
