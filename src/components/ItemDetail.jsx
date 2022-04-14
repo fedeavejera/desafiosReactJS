@@ -21,14 +21,13 @@ import {Card, CardImg, CardBody, CardTitle, CardText, CardSubtitle, Button} from
         <CardBody>
           <CardTitle tag="h5">{productos.nombre}</CardTitle>
           <CardSubtitle className="mb-2 text-muted" tag="h6">{productos.marca}</CardSubtitle>
-          <CardSubtitle className="mb-2 text-muted" tag="h6">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem perspiciatis earum aperiam amet delectus, cum nulla autem. Ipsam, iusto atque? Fugit, cupiditate sit fugiat fuga voluptatem placeat quaerat et nisi?</CardSubtitle>
+          <CardSubtitle className="mb-2 text-muted" tag="h6">{productos.description}</CardSubtitle>
           <CardText>${productos.precio}</CardText>
-          <Button>
-            Add To Cart
-          </Button>
+          <CardSubtitle className="mb-2 text-muted" tag="h6">Unidades disponibles:{productos.stock}</CardSubtitle>          
+          <ItemCount stock={productos.stock} initial={1}/>
         </CardBody>
       </Card></div>
-      <ItemCount />
+      
             </Row>
         </Container>
         </>

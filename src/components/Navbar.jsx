@@ -1,11 +1,13 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import logonav from '../img/logotamachicoo.png';
 import CartWidget from './CartWidget';
+import { Link } from "react-router-dom";
+
 const Navbar = () => {
     return (
         <div className="App">
         <nav class="navbar navbar-expand-lg navbar-light">
-          <a class="navbar-brand" href="index.html"><img className= "logo" src={logonav}/></a>
+          <Link to='/'><img className= "logo" src={logonav}/></Link>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -13,10 +15,10 @@ const Navbar = () => {
           <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Herramientas Eléctricas<span class="sr-only"></span></a>
+              <Link to='/category/Electrica' style={{textDecoration: "none"}}><a class="nav-link" href="#">Herramientas Eléctricas<span class="sr-only"></span></a></Link>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Herramientas Manuales</a>
+            <Link to='/category/Manual' style={{textDecoration: "none"}}><a class="nav-link" href="#">Herramientas Manuales</a></Link>
             </li>   
             <li class="nav-item">
              <CartWidget/>

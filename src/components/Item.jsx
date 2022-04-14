@@ -9,7 +9,7 @@ const Item = ({ id, nombre, marca, precio, stock, img, categoria, description}) 
     <Card key={id}>
         <CardImg
           alt="Card image cap"
-          src= {img.url}
+          src= {img}
           top
           width="100%"
         />

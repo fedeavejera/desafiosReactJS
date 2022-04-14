@@ -19,7 +19,9 @@ div .boxNav {
 
 
 }
-
+div .card {
+  width: 30%;
+}
 .Card {
   width: 50%;
 }
