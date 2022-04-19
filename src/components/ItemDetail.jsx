@@ -1,11 +1,20 @@
 import React from 'react';
 import Item from './Item';
+import {useState} from 'react';
+import { Link } from "react-router-dom";
 import ItemCount from './ItemCount';
 import { Container, Row} from "reactstrap";
 import {Card, CardImg, CardBody, CardTitle, CardText, CardSubtitle, Button} from "reactstrap"
+import CheckOut from './ChekOut';
 
  const ItemDetail = ({ productos }) => {
- 
+   const [itemCount, setItemCount] = useState(0);
+
+   const onAdd = (quantity) => {
+     alert("You have selected" + quantity + "products.");
+     setItemCount(quantity);
+   }
+
     return(
         <>
         <Container>
@@ -23,8 +32,12 @@ import {Card, CardImg, CardBody, CardTitle, CardText, CardSubtitle, Button} from
           <CardSubtitle className="mb-2 text-muted" tag="h6">{productos.marca}</CardSubtitle>
           <CardSubtitle className="mb-2 text-muted" tag="h6">{productos.description}</CardSubtitle>
           <CardText>${productos.precio}</CardText>
-          <CardSubtitle className="mb-2 text-muted" tag="h6">Unidades disponibles:{productos.stock}</CardSubtitle>          
-          <ItemCount stock={productos.stock} initial={1}/>
+          <CardSubtitle className="mb-2 text-muted" tag="h6">Unidades disponibles:{productos.stock}</CardSubtitle>
+          {  
+          itemCount === 0        
+          ? <ItemCount stock={productos.stock} initial={itemCount} onAdd={onAdd} />
+          : <CheckOut />
+          }
         </CardBody>
       </Card></div>
       
