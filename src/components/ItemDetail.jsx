@@ -1,18 +1,21 @@
 import React from 'react';
 import Item from './Item';
-import {useState} from 'react';
+import {useState, useContext} from 'react';
 import { Link } from "react-router-dom";
 import ItemCount from './ItemCount';
 import { Container, Row} from "reactstrap";
 import {Card, CardImg, CardBody, CardTitle, CardText, CardSubtitle, Button} from "reactstrap"
 import CheckOut from './ChekOut';
+import { CartContext } from './CartContext';
 
  const ItemDetail = ({ productos }) => {
    const [itemCount, setItemCount] = useState(0);
+   const test = useContext(CartContext);
 
    const onAdd = (quantity) => {
      alert("You have selected" + quantity + "products.");
      setItemCount(quantity);
+     test.addToCart(productos, quantity);
    }
 
     return(
