@@ -18,21 +18,21 @@ const Cart = () => {
         <div>
             {
                test.cartList.length > 0 ?
-               test.cartList.map( item => 
+               test.cartList.map( productos => 
 
-                <Card key={item.idItem}>
+                <Card key={productos.idItem}>
                    <CardImg
                      alt="Card image cap"
-                     src= {item.imgItem}
+                     src= {productos.imgItem}
                      top
                      width="100%"
                    />
                    <CardBody>
-                     <CardTitle tag="h5">{item.nameItem}</CardTitle>
-                     <CardSubtitle className="mb-2 text-muted" tag="h6">{item.brandItem}</CardSubtitle>
-                     <CardText>$ {item.priceItem}</CardText> 
-                     <CardText>{item.qtyItem}</CardText>    
-                     <Button onClick={() => test.removeItem(item.idItem)}>Delete</Button>                
+                     <CardTitle tag="h5">{productos.nameItem}</CardTitle>
+                     <CardSubtitle className="mb-2 text-muted" tag="h6">{productos.brandItem}</CardSubtitle>
+                     <CardText>$ {productos.priceItem}</CardText> 
+                     <CardText>{productos.qtyItem}</CardText>    
+                     <Button onClick={() => test.removeItem(productos.idItem)}>Delete</Button>                
                    </CardBody>
                 </Card>
 
@@ -45,3 +45,7 @@ const Cart = () => {
 }
 
 export default Cart;
+
+
+
+

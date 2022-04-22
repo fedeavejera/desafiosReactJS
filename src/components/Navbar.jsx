@@ -15,10 +15,10 @@ const Navbar = () => {
           <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <Link to='/category/Electrica' style={{textDecoration: "none"}}><a class="nav-link" href="#">Herramientas Eléctricas<span class="sr-only"></span></a></Link>
+              <Link to='/category/Electrica' style={{textDecoration: "none", color: '#0000008c',}}>Herramientas Eléctricas<span class="sr-only"></span></Link>
             </li>
             <li class="nav-item">
-            <Link to='/category/Manual' style={{textDecoration: "none"}}><a class="nav-link" href="#">Herramientas Manuales</a></Link>
+            <Link to='/category/Manual' style={{textDecoration: "none", color: '#0000008c'}}>Herramientas Manuales</Link>
             </li>   
             <li class="nav-item">
              <CartWidget/>

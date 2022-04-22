@@ -36,16 +36,18 @@ import { CartContext } from './CartContext';
           <CardSubtitle className="mb-2 text-muted" tag="h6">{productos.description}</CardSubtitle>
           <CardText>${productos.precio}</CardText>
           <CardSubtitle className="mb-2 text-muted" tag="h6">Unidades disponibles:{productos.stock}</CardSubtitle>
-          {  
+         
+        </CardBody>
+      </Card></div>
+      
+      
+            </Row>
+        </Container>
+        {  
           itemCount === 0        
           ? <ItemCount stock={productos.stock} initial={itemCount} onAdd={onAdd} />
           : <CheckOut />
           }
-        </CardBody>
-      </Card></div>
-      
-            </Row>
-        </Container>
         </>
     )
 }
