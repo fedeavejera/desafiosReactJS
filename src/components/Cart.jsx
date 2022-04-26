@@ -40,6 +40,23 @@ const Cart = () => {
                :<h1></h1>
             }
     </div>
+    <div>
+           {
+               test.cartList.length > 0 &&
+               <Card>               
+               <CardBody>
+                 <CardTitle tag="h5">Your Order</CardTitle>
+                 <CardSubtitle className="mb-2 text-muted" tag="h6">Subtotal</CardSubtitle>
+                 <CardText>{test.calcSubTotal()}</CardText> 
+                 <CardText>IVA</CardText>
+                 <CardText>{test.calcIVA()}</CardText>
+                 <CardText>Total</CardText>
+                 <CardText>{test.calcTotal()}</CardText>                       
+                 <Button>Finish</Button>                
+               </CardBody>
+            </Card>
+           }
+    </div>
         </>
     );
 }
