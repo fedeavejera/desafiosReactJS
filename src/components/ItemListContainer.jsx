@@ -1,25 +1,40 @@
 import { useEffect, useState } from 'react';
-import ItemCount from './ItemCount';
 import customFetch from "../utils/customFetch"
 import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
-const {data} = require('../utils/data');
+import { collection, getDocs } from "firebase/firestore";
+import db from '../utils/firebaseConfig';
+
+
+
 const ItemListContainer = () => {
 
     const [herramientas, setHerramientas] = useState([]);
     const { idCategory } = useParams();
 
+// component did update
+
    useEffect(() => {
-    if (idCategory == undefined) {  
-       customFetch(2000, data)
+   const fetchFromFirestore = async () => {    
+    const querySnapshot = await getDocs(collection(db, "products"));
+    const dataFromFirestore = querySnapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data()
+    }));
+    return dataFromFirestore;
+   }
+   fetchFromFirestore()
        .then(result => setHerramientas(result))
-       .catch(err => console.log(err))
-    } else {
-        customFetch(2000, data.filter(item => item.category === idCategory))
-       .then(result => setHerramientas(result))
-       .catch(err => console.log(err))
-    }
-   }, [idCategory]);
+       .catch(err => console.log(err));
+   }, [herramientas]);
+
+// component will unmount
+
+useEffect(()=> {
+    return (()=> {
+          setHerramientas([]);
+    })
+}, []);
     
 
     return (

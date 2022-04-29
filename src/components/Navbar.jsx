@@ -21,7 +21,7 @@ const Navbar = () => {
             <Link to='/category/Manual' style={{textDecoration: "none", color: '#0000008c'}}>Herramientas Manuales</Link>
             </li>   
             <li class="nav-item">
-             <CartWidget/>
+             <Link to='/' style={{textDecoration: "none", color: "black"}}><CartWidget/></Link>
             </li>         
           </ul>
                </div>
