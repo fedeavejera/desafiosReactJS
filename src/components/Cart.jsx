@@ -2,12 +2,55 @@ import {useContext} from 'react';
 import {CartContext} from './CartContext';
 import {Card, CardImg, CardBody, CardTitle, CardText, CardSubtitle, Button} from "reactstrap"
 import {Link} from 'react-router-dom';
+import { collection, doc, setDoc, serverTimestamp, updateDoc, increment } from "firebase/firestore";
+import db from '../utils/firebaseConfig';
 
 
 const Cart = () => {
     const test = useContext(CartContext);
 
     const finishOrder = () => {
+      const productsDataBase = test.cartList.map(products => ({
+        id: products.idItem,
+        title: products.nameItem,
+        price: products.priceItem,
+        qty: products.qtyItem
+      }));
+  
+      test.cartList.forEach(async (products) => {
+        const itemRef = doc(db, "products", products.idItem);
+        await updateDoc(itemRef, {
+          stock: increment(-products.qtyItem)
+        });
+      });
+  
+      let order = {
+        buyer: {
+          name: "Juan Perez",
+          email: "juan@perez.com",
+          phone: "123456789"
+        },
+        total: test.calcTotal(),
+        items: productsDataBase,
+        date: serverTimestamp()
+      };
+    
+      console.log(order);
+      
+      const createOrderInFirestore = async () => {
+        // Add a new document with a generated id
+        const newOrderRef = doc(collection(db, "orders"));
+        await setDoc(newOrderRef, order);
+        return newOrderRef;
+      }
+    
+      createOrderInFirestore()
+        .then(result => alert('Tu orden de compra fue creada!. Porfavor toma nota del n° de ID de tu orden.\n\n\nOrder ID: ' + result.id + '\n\n'))
+        .catch(err => console.log(err));
+    
+      test.clear();
+    
+    
 
     }
 
@@ -42,7 +85,7 @@ const Cart = () => {
                 </Card>
 
                )
-               :<h1>Cargando...</h1>
+               :<h1></h1>
             }
     </div>
     <div>
