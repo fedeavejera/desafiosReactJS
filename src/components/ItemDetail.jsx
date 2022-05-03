@@ -20,6 +20,9 @@ import { CartContext } from './CartContext';
 
     return(
         <>
+        {
+          productos && productos.img
+          ?
         <Container>
             <Row>
             <div> 
@@ -38,18 +41,20 @@ import { CartContext } from './CartContext';
           <CardSubtitle className="mb-2 text-muted" tag="h6">Unidades disponibles:{productos.stock}</CardSubtitle>
          
         </CardBody>
-      </Card></div>
-      
-      
+      </Card>
+      </div>     
             </Row>
         </Container>
+        : <p>Cargando...</p>
+      }
         {  
           itemCount === 0        
           ? <ItemCount stock={productos.stock} initial={itemCount} onAdd={onAdd} />
           : <CheckOut />
           }
+          
         </>
-    )
+    );
 }
 
 

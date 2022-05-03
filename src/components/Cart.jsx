@@ -6,6 +6,11 @@ import {Link} from 'react-router-dom';
 
 const Cart = () => {
     const test = useContext(CartContext);
+
+    const finishOrder = () => {
+
+    }
+
     return(
         <>
         <h1>Shopping Cart</h1>
@@ -37,7 +42,7 @@ const Cart = () => {
                 </Card>
 
                )
-               :<h1></h1>
+               :<h1>Cargando...</h1>
             }
     </div>
     <div>
@@ -52,7 +57,7 @@ const Cart = () => {
                  <CardText>{test.calcIVA()}</CardText>
                  <CardText>Total</CardText>
                  <CardText>{test.calcTotal()}</CardText>                       
-                 <Button>Finish</Button>                
+                 <Button onClick={finishOrder}>Finish</Button>                
                </CardBody>
             </Card>
            }
