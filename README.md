@@ -22,4 +22,8 @@ redirecciona al home en el momento que desee.
 - Reacstrap.
 - React Router Dom.
 
+<<<<<<< HEAD
 Autor: Federico Nicolás Avejera - Junior Web Developer.
+=======
+Autor: Federico Nicolás Avejera - Junior Web Developer.
+>>>>>>> 4f0b163e1347fe5744bdd1e8867cac6f281cd13f
