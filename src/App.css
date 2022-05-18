@@ -19,12 +19,13 @@ div .boxNav {
 
 
 }
-div .card {
+ div .card {
   width: 30%;
-}
-.Card {
+  margin: 15px;
+} 
+ /*.Card {
   width: 50%;
-}
+} */
 
 
 .divCount {

@@ -1,6 +1,6 @@
 import React from 'react';
 import Item from './Item';
-import { Container, Row} from "reactstrap";
+import { Container, Row, Col} from "reactstrap";
 
  const ItemList = ({ productos }) => {
    
@@ -8,8 +8,10 @@ import { Container, Row} from "reactstrap";
         <>
         <Container>
             <Row>
+                
                 {productos.map( (product) => (<Item key={product.id} {...product} />)
                 )}
+                
             </Row>
         </Container>
         </>

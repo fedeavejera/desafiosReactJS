@@ -25,7 +25,7 @@ import { CartContext } from './CartContext';
           ?
         <Container>
             <Row>
-            <div> 
+             
     <Card key={productos.id}>
         <CardImg
           alt="Card image cap"
@@ -42,7 +42,7 @@ import { CartContext } from './CartContext';
          
         </CardBody>
       </Card>
-      </div>     
+           
             </Row>
         </Container>
         : <p>Cargando...</p>

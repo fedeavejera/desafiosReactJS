@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Item = ({ id, nombre, marca, precio, stock, img, categoria, description}) => {
     
     return(
-        <div>
+        <>
     <Card key={id}>
         <CardImg
           alt="Card image cap"
@@ -22,7 +22,7 @@ const Item = ({ id, nombre, marca, precio, stock, img, categoria, description}) 
             Detalle
           </Button></Link>
         </CardBody>
-      </Card></div>
+      </Card></>
     );
 }
 

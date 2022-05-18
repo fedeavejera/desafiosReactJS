@@ -1,6 +1,6 @@
 import {useContext} from 'react';
 import {CartContext} from './CartContext';
-import {Card, CardImg, CardBody, CardTitle, CardText, CardSubtitle, Button} from "reactstrap"
+import {Card, CardImg, CardBody, CardTitle, CardText, CardSubtitle, Button, Container, Row} from "reactstrap"
 import {Link} from 'react-router-dom';
 import { collection, doc, setDoc, serverTimestamp, updateDoc, increment } from "firebase/firestore";
 import db from '../utils/firebaseConfig';
@@ -63,11 +63,12 @@ const Cart = () => {
             ? <Button onClick={test.clear}>Delete All Products</Button>
             : <h3>Your Cart is Empty</h3>
         }
-        <div>
+        
             {
                test.cartList.length > 0 ?
                test.cartList.map( productos => 
 
+                 
                 <Card key={productos.idItem}>
                    <CardImg
                      alt="Card image cap"
@@ -83,12 +84,13 @@ const Cart = () => {
                      <Button onClick={() => test.removeItem(productos.idItem)}>Delete</Button>                
                    </CardBody>
                 </Card>
+                
 
                )
                :<h1></h1>
             }
-    </div>
-    <div>
+    
+    
            {
                test.cartList.length > 0 &&
                <Card>               
@@ -104,7 +106,7 @@ const Cart = () => {
                </CardBody>
             </Card>
            }
-    </div>
+    
         </>
     );
 }
